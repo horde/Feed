@@ -10,7 +10,7 @@
   <email>chuck@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2016-02-01</date>
+ <date>2017-10-17</date>
  <version>
   <release>2.0.5</release>
   <api>1.1.0</api>
@@ -41,7 +41,6 @@
         <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
        </file>
       </dir> <!-- /doc/Horde/Feed/examples -->
-      <file name="COPYING" role="doc" />
      </dir> <!-- /doc/Horde/Feed -->
     </dir> <!-- /doc/Horde -->
    </dir> <!-- /doc -->
@@ -269,6 +268,7 @@
      </dir> <!-- /test/Horde/Feed -->
     </dir> <!-- /test/Horde -->
    </dir> <!-- /test -->
+   <file name="LICENSE" role="doc" />
   </dir> <!-- / -->
  </contents>
  <dependencies>
@@ -318,7 +318,6 @@
  </dependencies>
  <phprelease>
   <filelist>
-   <install as="COPYING" name="doc/Horde/Feed/COPYING" />
    <install as="examples/blogger.php" name="doc/Horde/Feed/examples/blogger.php" />
    <install as="examples/blogroll.php" name="doc/Horde/Feed/examples/blogroll.php" />
    <install as="examples/delete.php" name="doc/Horde/Feed/examples/delete.php" />
@@ -330,22 +329,19 @@
    <install as="Horde/Feed/Atom.php" name="lib/Horde/Feed/Atom.php" />
    <install as="Horde/Feed/Base.php" name="lib/Horde/Feed/Base.php" />
    <install as="Horde/Feed/Blogroll.php" name="lib/Horde/Feed/Blogroll.php" />
-   <install as="Horde/Feed/Exception.php" name="lib/Horde/Feed/Exception.php" />
-   <install as="Horde/Feed/Rss.php" name="lib/Horde/Feed/Rss.php" />
    <install as="Horde/Feed/Entry/Atom.php" name="lib/Horde/Feed/Entry/Atom.php" />
    <install as="Horde/Feed/Entry/Base.php" name="lib/Horde/Feed/Entry/Base.php" />
    <install as="Horde/Feed/Entry/Blogroll.php" name="lib/Horde/Feed/Entry/Blogroll.php" />
    <install as="Horde/Feed/Entry/Rss.php" name="lib/Horde/Feed/Entry/Rss.php" />
+   <install as="Horde/Feed/Exception.php" name="lib/Horde/Feed/Exception.php" />
+   <install as="Horde/Feed/Rss.php" name="lib/Horde/Feed/Rss.php" />
+   <install as="LICENSE" name="LICENSE" />
    <install as="Horde/Feed/AllTests.php" name="test/Horde/Feed/AllTests.php" />
    <install as="Horde/Feed/AtomEntryOnlyTest.php" name="test/Horde/Feed/AtomEntryOnlyTest.php" />
    <install as="Horde/Feed/AtomPublishingTest.php" name="test/Horde/Feed/AtomPublishingTest.php" />
    <install as="Horde/Feed/BlogrollTest.php" name="test/Horde/Feed/BlogrollTest.php" />
    <install as="Horde/Feed/bootstrap.php" name="test/Horde/Feed/bootstrap.php" />
    <install as="Horde/Feed/CountTest.php" name="test/Horde/Feed/CountTest.php" />
-   <install as="Horde/Feed/IteratorTest.php" name="test/Horde/Feed/IteratorTest.php" />
-   <install as="Horde/Feed/LexiconTest.php" name="test/Horde/Feed/LexiconTest.php" />
-   <install as="Horde/Feed/phpunit.xml" name="test/Horde/Feed/phpunit.xml" />
-   <install as="Horde/Feed/ReadTest.php" name="test/Horde/Feed/ReadTest.php" />
    <install as="Horde/Feed/fixtures/AtomPublishingTest-before-update.xml" name="test/Horde/Feed/fixtures/AtomPublishingTest-before-update.xml" />
    <install as="Horde/Feed/fixtures/AtomPublishingTest-created-entry.xml" name="test/Horde/Feed/fixtures/AtomPublishingTest-created-entry.xml" />
    <install as="Horde/Feed/fixtures/AtomPublishingTest-expected-update.xml" name="test/Horde/Feed/fixtures/AtomPublishingTest-expected-update.xml" />
@@ -360,21 +356,6 @@
    <install as="Horde/Feed/fixtures/AtomTestSample4.xml" name="test/Horde/Feed/fixtures/AtomTestSample4.xml" />
    <install as="Horde/Feed/fixtures/BlogRollTestSample1.xml" name="test/Horde/Feed/fixtures/BlogRollTestSample1.xml" />
    <install as="Horde/Feed/fixtures/BlogRollTestSample2.xml" name="test/Horde/Feed/fixtures/BlogRollTestSample2.xml" />
-   <install as="Horde/Feed/fixtures/MySubscriptions.opml" name="test/Horde/Feed/fixtures/MySubscriptions.opml" />
-   <install as="Horde/Feed/fixtures/MySubscriptionsGrouped.opml" name="test/Horde/Feed/fixtures/MySubscriptionsGrouped.opml" />
-   <install as="Horde/Feed/fixtures/NotAFeed.xml" name="test/Horde/Feed/fixtures/NotAFeed.xml" />
-   <install as="Horde/Feed/fixtures/RssTest091Sample1.xml" name="test/Horde/Feed/fixtures/RssTest091Sample1.xml" />
-   <install as="Horde/Feed/fixtures/RssTest092Sample1.xml" name="test/Horde/Feed/fixtures/RssTest092Sample1.xml" />
-   <install as="Horde/Feed/fixtures/RssTest100Sample1.xml" name="test/Horde/Feed/fixtures/RssTest100Sample1.xml" />
-   <install as="Horde/Feed/fixtures/RssTest100Sample2.xml" name="test/Horde/Feed/fixtures/RssTest100Sample2.xml" />
-   <install as="Horde/Feed/fixtures/RssTest200Sample1.xml" name="test/Horde/Feed/fixtures/RssTest200Sample1.xml" />
-   <install as="Horde/Feed/fixtures/RssTestCNN.xml" name="test/Horde/Feed/fixtures/RssTestCNN.xml" />
-   <install as="Horde/Feed/fixtures/RssTestHarvardLaw.xml" name="test/Horde/Feed/fixtures/RssTestHarvardLaw.xml" />
-   <install as="Horde/Feed/fixtures/RssTestPlanetPHP.xml" name="test/Horde/Feed/fixtures/RssTestPlanetPHP.xml" />
-   <install as="Horde/Feed/fixtures/RssTestSlashdot.xml" name="test/Horde/Feed/fixtures/RssTestSlashdot.xml" />
-   <install as="Horde/Feed/fixtures/TestAtomFeed.xml" name="test/Horde/Feed/fixtures/TestAtomFeed.xml" />
-   <install as="Horde/Feed/fixtures/TestAtomFeedEntryOnly.xml" name="test/Horde/Feed/fixtures/TestAtomFeedEntryOnly.xml" />
-   <install as="Horde/Feed/fixtures/TestAtomFeedNamespaced.xml" name="test/Horde/Feed/fixtures/TestAtomFeedNamespaced.xml" />
    <install as="Horde/Feed/fixtures/lexicon/bbmaintenance_rss.xml" name="test/Horde/Feed/fixtures/lexicon/bbmaintenance_rss.xml" />
    <install as="Horde/Feed/fixtures/lexicon/http-andigutmans.blogspot.com-atom.xml" name="test/Horde/Feed/fixtures/lexicon/http-andigutmans.blogspot.com-atom.xml" />
    <install as="Horde/Feed/fixtures/lexicon/http-arstechnica.com-etc-rdf-ars.rdf" name="test/Horde/Feed/fixtures/lexicon/http-arstechnica.com-etc-rdf-ars.rdf" />
@@ -532,6 +513,25 @@
    <install as="Horde/Feed/fixtures/lexicon/http-www.zeldman.com-feed-zeldman.xml" name="test/Horde/Feed/fixtures/lexicon/http-www.zeldman.com-feed-zeldman.xml" />
    <install as="Horde/Feed/fixtures/lexicon/http-xml.metafilter.com-rss.xml" name="test/Horde/Feed/fixtures/lexicon/http-xml.metafilter.com-rss.xml" />
    <install as="Horde/Feed/fixtures/lexicon/http-xml.newsisfree.com-feeds-06-1806.xml" name="test/Horde/Feed/fixtures/lexicon/http-xml.newsisfree.com-feeds-06-1806.xml" />
+   <install as="Horde/Feed/fixtures/MySubscriptions.opml" name="test/Horde/Feed/fixtures/MySubscriptions.opml" />
+   <install as="Horde/Feed/fixtures/MySubscriptionsGrouped.opml" name="test/Horde/Feed/fixtures/MySubscriptionsGrouped.opml" />
+   <install as="Horde/Feed/fixtures/NotAFeed.xml" name="test/Horde/Feed/fixtures/NotAFeed.xml" />
+   <install as="Horde/Feed/fixtures/RssTest091Sample1.xml" name="test/Horde/Feed/fixtures/RssTest091Sample1.xml" />
+   <install as="Horde/Feed/fixtures/RssTest092Sample1.xml" name="test/Horde/Feed/fixtures/RssTest092Sample1.xml" />
+   <install as="Horde/Feed/fixtures/RssTest100Sample1.xml" name="test/Horde/Feed/fixtures/RssTest100Sample1.xml" />
+   <install as="Horde/Feed/fixtures/RssTest100Sample2.xml" name="test/Horde/Feed/fixtures/RssTest100Sample2.xml" />
+   <install as="Horde/Feed/fixtures/RssTest200Sample1.xml" name="test/Horde/Feed/fixtures/RssTest200Sample1.xml" />
+   <install as="Horde/Feed/fixtures/RssTestCNN.xml" name="test/Horde/Feed/fixtures/RssTestCNN.xml" />
+   <install as="Horde/Feed/fixtures/RssTestHarvardLaw.xml" name="test/Horde/Feed/fixtures/RssTestHarvardLaw.xml" />
+   <install as="Horde/Feed/fixtures/RssTestPlanetPHP.xml" name="test/Horde/Feed/fixtures/RssTestPlanetPHP.xml" />
+   <install as="Horde/Feed/fixtures/RssTestSlashdot.xml" name="test/Horde/Feed/fixtures/RssTestSlashdot.xml" />
+   <install as="Horde/Feed/fixtures/TestAtomFeed.xml" name="test/Horde/Feed/fixtures/TestAtomFeed.xml" />
+   <install as="Horde/Feed/fixtures/TestAtomFeedEntryOnly.xml" name="test/Horde/Feed/fixtures/TestAtomFeedEntryOnly.xml" />
+   <install as="Horde/Feed/fixtures/TestAtomFeedNamespaced.xml" name="test/Horde/Feed/fixtures/TestAtomFeedNamespaced.xml" />
+   <install as="Horde/Feed/IteratorTest.php" name="test/Horde/Feed/IteratorTest.php" />
+   <install as="Horde/Feed/LexiconTest.php" name="test/Horde/Feed/LexiconTest.php" />
+   <install as="Horde/Feed/phpunit.xml" name="test/Horde/Feed/phpunit.xml" />
+   <install as="Horde/Feed/ReadTest.php" name="test/Horde/Feed/ReadTest.php" />
   </filelist>
  </phprelease>
  <changelog>
@@ -742,7 +742,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2016-02-01</date>
+   <date>2017-10-17</date>
    <license uri="http://www.horde.org/licenses/bsd">BSD-2-Clause</license>
    <notes>
 * 
