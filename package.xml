@@ -10,7 +10,7 @@
   <email>chuck@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-10-17</date>
+ <date>2017-10-20</date>
  <version>
   <release>2.0.5</release>
   <api>1.1.0</api>
@@ -30,16 +30,12 @@
      <dir name="Feed">
       <dir name="examples">
        <file name="blogger.php" role="doc" />
-       <file name="blogroll.php" role="doc">
-        <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
-       </file>
+       <file name="blogroll.php" role="doc" />
        <file name="delete.php" role="doc" />
        <file name="edit.php" role="doc" />
        <file name="post.php" role="doc" />
        <file name="read.php" role="doc" />
-       <file name="reader.php" role="doc">
-        <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
-       </file>
+       <file name="reader.php" role="doc" />
       </dir> <!-- /doc/Horde/Feed/examples -->
      </dir> <!-- /doc/Horde/Feed -->
     </dir> <!-- /doc/Horde -->
@@ -263,7 +259,6 @@
       <file name="CountTest.php" role="test" />
       <file name="IteratorTest.php" role="test" />
       <file name="LexiconTest.php" role="test" />
-      <file name="phpunit.xml" role="test" />
       <file name="ReadTest.php" role="test" />
      </dir> <!-- /test/Horde/Feed -->
     </dir> <!-- /test/Horde -->
@@ -530,7 +525,6 @@
    <install as="Horde/Feed/fixtures/TestAtomFeedNamespaced.xml" name="test/Horde/Feed/fixtures/TestAtomFeedNamespaced.xml" />
    <install as="Horde/Feed/IteratorTest.php" name="test/Horde/Feed/IteratorTest.php" />
    <install as="Horde/Feed/LexiconTest.php" name="test/Horde/Feed/LexiconTest.php" />
-   <install as="Horde/Feed/phpunit.xml" name="test/Horde/Feed/phpunit.xml" />
    <install as="Horde/Feed/ReadTest.php" name="test/Horde/Feed/ReadTest.php" />
   </filelist>
  </phprelease>
@@ -742,7 +736,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-10-17</date>
+   <date>2017-10-20</date>
    <license uri="http://www.horde.org/licenses/bsd">BSD-2-Clause</license>
    <notes>
 * 
