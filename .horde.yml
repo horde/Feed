@@ -5,3 +5,32 @@ full: Feed client library
 description: Support for working with feed formats such as RSS and Atom.
 list: dev
 type: library
+homepage: https://www.horde.org/libraries/Horde_Feed
+authors:
+  -
+    name: Chuck Hagenbuch
+    user: chuck
+    email: chuck@horde.org
+    active: true
+    role: lead
+version:
+  release: 2.0.5
+  api: 1.1.0
+state:
+  release: stable
+  api: stable
+license:
+  identifier: BSD-2-Clause
+  uri: http://www.horde.org/licenses/bsd
+dependencies:
+  required:
+    php: ^5.3 || ^7
+    pear:
+      pear.horde.org/Horde_Exception: ^2
+      pear.horde.org/Horde_Http: ^2
+      pear.horde.org/Horde_Xml_Element: ^2
+    ext:
+      dom: '*'
+  optional:
+    pear:
+      pear.horde.org/Horde_Test: ^2.1
