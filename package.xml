@@ -10,7 +10,7 @@
   <email>chuck@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2016-02-01</date>
+ <date>2017-10-30</date>
  <version>
   <release>2.0.5</release>
   <api>1.1.0</api>
@@ -41,6 +41,7 @@
         <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
        </file>
       </dir> <!-- /doc/Horde/Feed/examples -->
+      <file name="CHANGES" role="doc" />
       <file name="COPYING" role="doc" />
      </dir> <!-- /doc/Horde/Feed -->
     </dir> <!-- /doc/Horde -->
@@ -318,6 +319,7 @@
  </dependencies>
  <phprelease>
   <filelist>
+   <install as="CHANGES" name="doc/Horde/Feed/CHANGES" />
    <install as="COPYING" name="doc/Horde/Feed/COPYING" />
    <install as="examples/blogger.php" name="doc/Horde/Feed/examples/blogger.php" />
    <install as="examples/blogroll.php" name="doc/Horde/Feed/examples/blogroll.php" />
@@ -742,7 +744,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2016-02-01</date>
+   <date>2017-10-30</date>
    <license uri="http://www.horde.org/licenses/bsd">BSD-2-Clause</license>
    <notes>
 * 

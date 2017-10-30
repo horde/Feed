@@ -1,0 +1,110 @@
+----------
+v2.0.5-git
+----------
+
+
+------
+v2.0.4
+------
+
+[jan] Mark PHP 7 as supported.
+
+
+------
+v2.0.3
+------
+
+[jan] Improve PSR-2 compatibility.
+
+
+------
+v2.0.2
+------
+
+[jan] Fix loading of local files with basedir restrictions or libxml entity
+      loading disabled.
+
+
+------
+v2.0.1
+------
+
+[mms] Use new Horde_Test layout.
+
+
+------
+v2.0.0
+------
+
+First stable release for Horde 5.
+
+
+-----------
+v2.0.0beta1
+-----------
+
+First beta release for Horde 5.
+
+
+------------
+v2.0.0alpha1
+------------
+
+First alpha release for Horde 5.
+
+
+------
+v1.1.1
+------
+
+[jan] Fix tests to work with PHPUnit 3.6.
+
+
+------
+v1.1.0
+------
+
+[gwr] Added an example on how to post to blogger.com.
+[gwr] Support additional request headers when updating Atom entries.
+
+
+------
+v1.0.0
+------
+
+First stable release for Horde 4.
+
+
+---------
+v1.0.0RC2
+---------
+
+Second release candidate for Horde 4.
+[jan] Fix loading of local files with non-URI characters in the file name.
+[jan] Fix converting of libxml errors to exceptions.
+
+
+---------
+v1.0.0RC1
+---------
+
+First release candidate for Horde 4.
+
+
+-----------
+v1.0.0beta1
+-----------
+
+First beta release for Horde 4.
+
+
+------------
+v1.0.0alpha1
+------------
+
+First alpha release for Horde 4.
+More robust parsing (recover from XML errors, fall back to HTML parsing)
+Return content:encoded when the content element is requested from an RSS entry
+Find <item> elements outside the <channel> element (i.e., RSS 1.0)
+Optionally send PUT and DELETE requests as POST (HTTP-Method-Override)
+Support redirects in DELETE requests
