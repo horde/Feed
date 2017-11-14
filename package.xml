@@ -265,7 +265,6 @@
       <file name="CountTest.php" role="test" />
       <file name="IteratorTest.php" role="test" />
       <file name="LexiconTest.php" role="test" />
-      <file name="phpunit.xml" role="test" />
       <file name="ReadTest.php" role="test" />
      </dir> <!-- /test/Horde/Feed -->
     </dir> <!-- /test/Horde -->
@@ -346,7 +345,6 @@
    <install as="Horde/Feed/CountTest.php" name="test/Horde/Feed/CountTest.php" />
    <install as="Horde/Feed/IteratorTest.php" name="test/Horde/Feed/IteratorTest.php" />
    <install as="Horde/Feed/LexiconTest.php" name="test/Horde/Feed/LexiconTest.php" />
-   <install as="Horde/Feed/phpunit.xml" name="test/Horde/Feed/phpunit.xml" />
    <install as="Horde/Feed/ReadTest.php" name="test/Horde/Feed/ReadTest.php" />
    <install as="Horde/Feed/fixtures/AtomPublishingTest-before-update.xml" name="test/Horde/Feed/fixtures/AtomPublishingTest-before-update.xml" />
    <install as="Horde/Feed/fixtures/AtomPublishingTest-created-entry.xml" name="test/Horde/Feed/fixtures/AtomPublishingTest-created-entry.xml" />
