@@ -4,11 +4,16 @@
  * @package Feed
  * @subpackage UnitTests
  */
-class Horde_Feed_ReadTest extends PHPUnit_Framework_TestCase
+namespace Horde\Feed;
+use PHPUnit\Framework\TestCase;
+use \Horde_Feed;
+use \Horde_Feed_Base;
+
+class ReadTest extends TestCase
 {
     protected $_feedDir;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_feedDir = __DIR__ . '/fixtures/';
     }
@@ -67,13 +72,8 @@ class Horde_Feed_ReadTest extends PHPUnit_Framework_TestCase
 
     public function testNotAFeed()
     {
-        try {
-            $feed = Horde_Feed::readFile($this->_feedDir . 'NotAFeed.xml');
-        } catch (Exception $e) {
-            $this->assertInstanceOf('Horde_Feed_Exception', $e);
-            return;
-        }
+        $this->expectException('Horde_Feed_Exception');
 
-        $this->fail('Expected a Horde_Feed_Exception when parsing content that is not a feed of any kind');
+        $feed = Horde_Feed::readFile($this->_feedDir . 'NotAFeed.xml');
     }
 }

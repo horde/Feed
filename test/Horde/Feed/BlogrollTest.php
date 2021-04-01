@@ -4,11 +4,15 @@
  * @package Feed
  * @subpackage UnitTests
  */
-class Horde_Feed_BlogrollTest extends PHPUnit_Framework_TestCase
+namespace Horde\Feed;
+use PHPUnit\Framework\TestCase;
+use \Horde_Feed;
+
+class BlogrollTest extends TestCase
 {
     protected $_feedDir;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_feedDir = __DIR__ . '/fixtures/';
     }
@@ -39,6 +43,7 @@ class Horde_Feed_BlogrollTest extends PHPUnit_Framework_TestCase
     public function testGroupedBlogrolls()
     {
         $feed = Horde_Feed::readFile($this->_feedDir . 'MySubscriptionsGrouped.opml');
+        $this->markTestIncomplete();
     }
 
     public static function getValidBlogrollTests()

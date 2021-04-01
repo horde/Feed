@@ -4,12 +4,17 @@
  * @package Feed
  * @subpackage UnitTests
  */
-class Horde_Feed_IteratorTest extends PHPUnit_Framework_TestCase {
+namespace Horde\Feed;
+use PHPUnit\Framework\TestCase;
+use \Horde_Feed;
+use \Horde_Feed_Entry_Atom;
+
+class IteratorTest extends TestCase {
 
     private $feed;
     private $nsfeed;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->feed = Horde_Feed::readFile(__DIR__ . '/fixtures/TestAtomFeed.xml');
         $this->nsfeed = Horde_Feed::readFile(__DIR__ . '/fixtures/TestAtomFeedNamespaced.xml');

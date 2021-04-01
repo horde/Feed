@@ -4,11 +4,18 @@
  * @package Feed
  * @subpackage UnitTests
  */
-class Horde_Feed_AtomPublishingTest extends PHPUnit_Framework_TestCase {
+namespace Horde\Feed;
+use PHPUnit\Framework\TestCase;
+use \Horde_Http_Request_Mock;
+use \Horde_Http_Response_Mock;
+use \Horde_Http_Client;
+use \Horde_Feed_Entry_Atom;
+
+class AtomPublishingTest extends TestCase {
 
     private $uri;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->uri = 'http://example.com/Feed';
     }

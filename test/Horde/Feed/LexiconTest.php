@@ -4,7 +4,12 @@
  * @package Feed
  * @subpackage UnitTests
  */
-class Horde_Feed_LexiconTest extends PHPUnit_Framework_TestCase
+namespace Horde\Feed;
+use PHPUnit\Framework\TestCase;
+use \DirectoryIterator;
+use \Horde_Feed;
+
+class LexiconTest extends TestCase
 {
     /**
      * @dataProvider getLexicon
