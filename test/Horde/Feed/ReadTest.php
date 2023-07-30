@@ -4,11 +4,11 @@
  * @package Feed
  * @subpackage UnitTests
  */
-class Horde_Feed_ReadTest extends PHPUnit_Framework_TestCase
+class Horde_Feed_ReadTest extends Horde_Test_Case
 {
     protected $_feedDir;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_feedDir = __DIR__ . '/fixtures/';
     }

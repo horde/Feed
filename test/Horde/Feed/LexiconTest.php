@@ -4,7 +4,7 @@
  * @package Feed
  * @subpackage UnitTests
  */
-class Horde_Feed_LexiconTest extends PHPUnit_Framework_TestCase
+class Horde_Feed_LexiconTest extends Horde_Test_Case
 {
     /**
      * @dataProvider getLexicon

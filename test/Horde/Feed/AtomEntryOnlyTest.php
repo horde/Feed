@@ -4,7 +4,7 @@
  * @package Feed
  * @subpackage UnitTests
  */
-class Horde_Feed_AtomEntryOnlyTest extends PHPUnit_Framework_TestCase {
+class Horde_Feed_AtomEntryOnlyTest extends Horde_Test_Case {
 
     public function testEntryOnly()
     {

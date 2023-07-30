@@ -4,11 +4,11 @@
  * @package Feed
  * @subpackage UnitTests
  */
-class Horde_Feed_AtomPublishingTest extends PHPUnit_Framework_TestCase {
+class Horde_Feed_AtomPublishingTest extends Horde_Test_Case {
 
     private $uri;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->uri = 'http://example.com/Feed';
     }
