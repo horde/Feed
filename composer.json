@@ -1,5 +1,4 @@
 {
-    "minimum-stability": "dev",
     "name": "horde/feed",
     "description": "Feed client library",
     "type": "library",
@@ -12,13 +11,8 @@
             "role": "lead"
         }
     ],
-    "time": "2021-03-21",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://horde-satis.maintaina.com/"
-        }
-    ],
+    "time": "2026-03-15",
+    "repositories": [],
     "require": {
         "php": "^7.4 || ^8",
         "horde/exception": "^3 || dev-FRAMEWORK_6_0",
@@ -26,12 +20,26 @@
         "horde/xml_element": "^3 || dev-FRAMEWORK_6_0",
         "ext-dom": "*"
     },
+    "require-dev": {},
     "suggest": {
         "horde/test": "^3 || dev-FRAMEWORK_6_0"
     },
     "autoload": {
         "psr-0": {
             "Horde_Feed": "lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Horde\\Feed\\Test\\": "test/"
+        }
+    },
+    "config": {
+        "allow-plugins": {}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-FRAMEWORK_6_0": "3.x-dev"
         }
     }
 }

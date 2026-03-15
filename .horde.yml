@@ -14,10 +14,10 @@ authors:
     active: false
     role: lead
 version:
-  release: 3.0.0alpha2
+  release: 3.0.0-beta1
   api: 1.1.0
 state:
-  release: stable
+  release: beta
   api: stable
 license:
   identifier: BSD-2-Clause
@@ -34,3 +34,4 @@ dependencies:
   optional:
     composer:
       horde/test: ^3
+vendor: horde
