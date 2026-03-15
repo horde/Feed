@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Portions Copyright 2005-2007 Zend Technologies USA Inc. (http://www.zend.com)
- * Copyright 2007-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2007-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (BSD). If you
  * did not receive this file, see http://www.horde.org/licenses/bsd.
@@ -52,7 +53,7 @@ abstract class Horde_Feed_Base extends Horde_Xml_Element_List
      * @param mixed $xml The feed as a string, a DOMElement, or null.
      * @param string $uri The full URI of the feed, or null if unknown.
      */
-    public function __construct($xml = null, $uri = null, Horde_Http_Client $httpClient = null)
+    public function __construct($xml = null, $uri = null, ?Horde_Http_Client $httpClient = null)
     {
         $this->_uri = $uri;
 
@@ -105,6 +106,8 @@ abstract class Horde_Feed_Base extends Horde_Xml_Element_List
     public function current()
     {
         return new $this->_listItemClassName(
-            $this->_listItems[$this->_listItemIndex], $this->_httpClient);
+            $this->_listItems[$this->_listItemIndex],
+            $this->_httpClient
+        );
     }
 }

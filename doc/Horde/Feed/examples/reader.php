@@ -1,5 +1,6 @@
 #!/usr/bin/env php
 <?php
+
 /**
  * @package Feed
  */
@@ -7,10 +8,10 @@
 /* Get a Horde framework include_path set up. */
 require 'Horde/Autoloader.php';
 
-$p = new Horde_Argv_Parser(array(
+$p = new Horde_Argv_Parser([
     'usage' => "%prog feed_url\n\nExample:\n%prog http://graphics8.nytimes.com/services/xml/rss/nyt/HomePage.xml",
-));
-list($values, $args) = $p->parseArgs();
+]);
+[$values, $args] = $p->parseArgs();
 if (count($args) != 1) {
     $p->printHelp();
     exit(1);

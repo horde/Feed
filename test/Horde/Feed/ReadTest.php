@@ -1,14 +1,20 @@
 <?php
+
 /**
  * @category Horde
  * @package Feed
  * @subpackage UnitTests
  */
-namespace Horde\Feed;
-use PHPUnit\Framework\TestCase;
-use \Horde_Feed;
-use \Horde_Feed_Base;
 
+namespace Horde\Feed;
+
+use PHPUnit\Framework\TestCase;
+use Horde_Feed;
+use Horde_Feed_Base;
+
+/**
+ * @coversNothing
+ */
 class ReadTest extends TestCase
 {
     protected $_feedDir;
@@ -29,15 +35,15 @@ class ReadTest extends TestCase
 
     public static function getValidAtomTests()
     {
-        return array(
-            array('AtomTestGoogle.xml'),
-            array('AtomTestMozillazine.xml'),
-            array('AtomTestOReilly.xml'),
-            array('AtomTestPlanetPHP.xml'),
-            array('AtomTestSample1.xml'),
-            array('AtomTestSample2.xml'),
-            array('AtomTestSample4.xml'),
-        );
+        return [
+            ['AtomTestGoogle.xml'],
+            ['AtomTestMozillazine.xml'],
+            ['AtomTestOReilly.xml'],
+            ['AtomTestPlanetPHP.xml'],
+            ['AtomTestSample1.xml'],
+            ['AtomTestSample2.xml'],
+            ['AtomTestSample4.xml'],
+        ];
     }
 
     /**
@@ -51,17 +57,17 @@ class ReadTest extends TestCase
 
     public static function getValidRssTests()
     {
-        return array(
-            array('RssTestHarvardLaw.xml'),
-            array('RssTestPlanetPHP.xml'),
-            array('RssTestSlashdot.xml'),
-            array('RssTestCNN.xml'),
-            array('RssTest091Sample1.xml'),
-            array('RssTest092Sample1.xml'),
-            array('RssTest100Sample1.xml'),
-            array('RssTest100Sample2.xml'),
-            array('RssTest200Sample1.xml'),
-        );
+        return [
+            ['RssTestHarvardLaw.xml'],
+            ['RssTestPlanetPHP.xml'],
+            ['RssTestSlashdot.xml'],
+            ['RssTestCNN.xml'],
+            ['RssTest091Sample1.xml'],
+            ['RssTest092Sample1.xml'],
+            ['RssTest100Sample1.xml'],
+            ['RssTest100Sample2.xml'],
+            ['RssTest200Sample1.xml'],
+        ];
     }
 
     public function testAtomWithUnbalancedTags()

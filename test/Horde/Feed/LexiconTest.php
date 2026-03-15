@@ -1,14 +1,20 @@
 <?php
+
 /**
  * @category Horde
  * @package Feed
  * @subpackage UnitTests
  */
-namespace Horde\Feed;
-use PHPUnit\Framework\TestCase;
-use \DirectoryIterator;
-use \Horde_Feed;
 
+namespace Horde\Feed;
+
+use PHPUnit\Framework\TestCase;
+use DirectoryIterator;
+use Horde_Feed;
+
+/**
+ * @coversNothing
+ */
 class LexiconTest extends TestCase
 {
     /**
@@ -22,10 +28,10 @@ class LexiconTest extends TestCase
 
     public static function getLexicon()
     {
-        $files = array();
+        $files = [];
         foreach (new DirectoryIterator(__DIR__ . '/fixtures/lexicon') as $file) {
             if ($file->isFile()) {
-                $files[] = array($file->getPathname());
+                $files[] = [$file->getPathname()];
             }
         }
 

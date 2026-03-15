@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Example of editing an Atom post with Horde_Feed.
  *

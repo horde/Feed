@@ -1,13 +1,19 @@
 <?php
+
 /**
  * @category Horde
  * @package Feed
  * @subpackage UnitTests
  */
-namespace Horde\Feed;
-use PHPUnit\Framework\TestCase;
-use \Horde_Feed;
 
+namespace Horde\Feed;
+
+use PHPUnit\Framework\TestCase;
+use Horde_Feed;
+
+/**
+ * @coversNothing
+ */
 class BlogrollTest extends TestCase
 {
     protected $_feedDir;
@@ -48,11 +54,11 @@ class BlogrollTest extends TestCase
 
     public static function getValidBlogrollTests()
     {
-        return array(
-            array('BlogRollTestSample1.xml'),
-            array('BlogRollTestSample2.xml'),
-            array('MySubscriptions.opml'),
-            array('MySubscriptionsGrouped.opml'),
-        );
+        return [
+            ['BlogRollTestSample1.xml'],
+            ['BlogRollTestSample2.xml'],
+            ['MySubscriptions.opml'],
+            ['MySubscriptionsGrouped.opml'],
+        ];
     }
 }

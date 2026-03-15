@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Portions Copyright 2005-2007 Zend Technologies USA Inc. (http://www.zend.com)
- * Copyright 2007-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2007-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (BSD). If you
  * did not receive this file, see http://www.horde.org/licenses/bsd.
@@ -43,7 +44,7 @@ class Horde_Feed_Entry_Rss extends Horde_Feed_Entry_Base
         } elseif (isset($this->_children['encoded'])) {
             return $this->_children['encoded'];
         }
-        return isset($this->_children['content']) ? $this->_children['content'] : array();
+        return $this->_children['content'] ?? [];
     }
 
 }

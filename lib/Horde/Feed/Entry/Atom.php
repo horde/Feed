@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Portions Copyright 2005-2007 Zend Technologies USA Inc. (http://www.zend.com)
- * Copyright 2007-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2007-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (BSD). If you
  * did not receive this file, see http://www.horde.org/licenses/bsd.
@@ -64,19 +65,19 @@ class Horde_Feed_Entry_Atom extends Horde_Feed_Entry_Base
         // DELETE
         do {
             $response = $this->_httpClient->delete($deleteUri);
-            switch ((int)$response->code / 100) {
-            // Success
-            case 2:
-                return true;
+            switch ((int) $response->code / 100) {
+                // Success
+                case 2:
+                    return true;
 
-            // Redirect
-            case 3:
-                $deleteUri = $response->getHeader('Location');
-                continue;
+                    // Redirect
+                case 3:
+                    $deleteUri = $response->getHeader('Location');
+                    continue;
 
-            // Error
-            default:
-                throw new Horde_Feed_Exception('Expected response code 2xx, got ' . $response->code);
+                    // Error
+                default:
+                    throw new Horde_Feed_Exception('Expected response code 2xx, got ' . $response->code);
             }
         } while (true);
     }
@@ -102,10 +103,10 @@ class Horde_Feed_Entry_Atom extends Horde_Feed_Entry_Base
      * @throws Horde_Feed_Exception If an error occurs, a Horde_Feed_Exception
      * will be thrown.
      */
-    public function save($postUri = null, $headers = array())
+    public function save($postUri = null, $headers = [])
     {
         $headers = array_merge(
-            array('Content-Type' => 'application/atom+xml'),
+            ['Content-Type' => 'application/atom+xml'],
             $headers
         );
 
@@ -133,7 +134,7 @@ class Horde_Feed_Entry_Atom extends Horde_Feed_Entry_Base
 
         // Update internal properties using the response body.
         $body = $response->getBody();
-        $newEntry = new DOMDocument;
+        $newEntry = new DOMDocument();
         $parsed = @$newEntry->loadXML($body);
         if (!$parsed) {
             throw new Horde_Feed_Exception('DOMDocument cannot parse XML: ', error_get_last());
@@ -181,7 +182,7 @@ class Horde_Feed_Entry_Atom extends Horde_Feed_Entry_Base
         $links = parent::__get('link');
         if (!is_array($links)) {
             if ($links instanceof Horde_Xml_Element) {
-                $links = array($links);
+                $links = [$links];
             } else {
                 return $links;
             }

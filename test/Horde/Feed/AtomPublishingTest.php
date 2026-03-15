@@ -1,18 +1,24 @@
 <?php
+
 /**
  * @category Horde
  * @package Feed
  * @subpackage UnitTests
  */
+
 namespace Horde\Feed;
+
 use PHPUnit\Framework\TestCase;
-use \Horde_Http_Request_Mock;
-use \Horde_Http_Response_Mock;
-use \Horde_Http_Client;
-use \Horde_Feed_Entry_Atom;
+use Horde_Http_Request_Mock;
+use Horde_Http_Response_Mock;
+use Horde_Http_Client;
+use Horde_Feed_Entry_Atom;
 
-class AtomPublishingTest extends TestCase {
-
+/**
+ * @coversNothing
+ */
+class AtomPublishingTest extends TestCase
+{
     private $uri;
 
     public function setUp(): void
@@ -23,8 +29,8 @@ class AtomPublishingTest extends TestCase {
     public function testPost()
     {
         $mock = new Horde_Http_Request_Mock();
-        $mock->setResponse(new Horde_Http_Response_Mock('', fopen(__DIR__ . '/fixtures/AtomPublishingTest-created-entry.xml', 'r'), array('HTTP/1.1 201')));
-        $httpClient = new Horde_Http_Client(array('request' => $mock));
+        $mock->setResponse(new Horde_Http_Response_Mock('', fopen(__DIR__ . '/fixtures/AtomPublishingTest-created-entry.xml', 'r'), ['HTTP/1.1 201']));
+        $httpClient = new Horde_Http_Client(['request' => $mock]);
 
         $entry = new Horde_Feed_Entry_Atom(null, $httpClient);
 
@@ -50,12 +56,12 @@ class AtomPublishingTest extends TestCase {
     public function testEdit()
     {
         $mock = new Horde_Http_Request_Mock();
-        $mock->setResponse(new Horde_Http_Response_Mock('', fopen(__DIR__ . '/fixtures/AtomPublishingTest-updated-entry.xml', 'r'), array('HTTP/1.1 200')));
-        $httpClient = new Horde_Http_Client(array('request' => $mock));
+        $mock->setResponse(new Horde_Http_Response_Mock('', fopen(__DIR__ . '/fixtures/AtomPublishingTest-updated-entry.xml', 'r'), ['HTTP/1.1 200']));
+        $httpClient = new Horde_Http_Client(['request' => $mock]);
 
         // The base feed URI is the same as the POST URI, so just supply the
         // Horde_Feed_Entry_Atom object with that.
-        $contents = file_get_contents(__DIR__ .  '/fixtures/AtomPublishingTest-before-update.xml');
+        $contents = file_get_contents(__DIR__ . '/fixtures/AtomPublishingTest-before-update.xml');
         $entry = new Horde_Feed_Entry_Atom($contents, $httpClient);
 
         // Initial state.

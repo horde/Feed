@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Example of posting a new Atom entry with Horde_Feed.
  *
@@ -19,7 +20,7 @@ try {
     $response = $httpClient->post(
         'https://www.google.com/accounts/ClientLogin',
         'accountType=GOOGLE&service=blogger&source=horde-feed-blogger-example-1&Email=' . $username . '&Passwd=' . $password,
-        array('Content-type', 'application/x-www-form-urlencoded')
+        ['Content-type', 'application/x-www-form-urlencoded']
     );
     if ($response->code !== 200) {
         throw new Horde_Feed_Exception('Expected response code 200, got ' . $response->code);
@@ -50,7 +51,7 @@ $entry->{'atom:content'}['type'] = 'text';
 
 /* Do the initial post. */
 try {
-    $entry->save($blogUri, array('Authorization' => 'GoogleLogin auth=' . $auth));
+    $entry->save($blogUri, ['Authorization' => 'GoogleLogin auth=' . $auth]);
 } catch (Horde_Feed_Exception $e) {
     die('An error occurred posting: ' . $e->getMessage() . "\n");
 }

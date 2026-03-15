@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Example of deleting Atom posts with Horde_Feed.
  *

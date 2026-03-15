@@ -1,16 +1,22 @@
 <?php
+
 /**
  * @category Horde
  * @package Feed
  * @subpackage UnitTests
  */
+
 namespace Horde\Feed;
+
 use PHPUnit\Framework\TestCase;
-use \Horde_Feed;
-use \Horde_Feed_Entry_Atom;
+use Horde_Feed;
+use Horde_Feed_Entry_Atom;
 
-class IteratorTest extends TestCase {
-
+/**
+ * @coversNothing
+ */
+class IteratorTest extends TestCase
+{
     private $feed;
     private $nsfeed;
 
@@ -62,17 +68,17 @@ class IteratorTest extends TestCase {
 
     public function testKey()
     {
-        $keys = array();
+        $keys = [];
         foreach ($this->feed as $k => $f) {
             $keys[] = $k;
         }
-        $this->assertEquals($keys, array(0, 1), 'Feed should have keys 0 and 1');
+        $this->assertEquals($keys, [0, 1], 'Feed should have keys 0 and 1');
 
-        $keys = array();
+        $keys = [];
         foreach ($this->nsfeed as $k => $f) {
             $keys[] = $k;
         }
-        $this->assertEquals($keys, array(0, 1), 'Feed should have keys 0 and 1');
+        $this->assertEquals($keys, [0, 1], 'Feed should have keys 0 and 1');
     }
 
     public function testNext()

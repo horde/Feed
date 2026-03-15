@@ -1,15 +1,21 @@
 <?php
+
 /**
  * @category Horde
  * @package Feed
  * @subpackage UnitTests
  */
+
 namespace Horde\Feed;
+
 use PHPUnit\Framework\TestCase;
-use \Horde_Feed;
+use Horde_Feed;
 
-class AtomEntryOnlyTest extends TestCase {
-
+/**
+ * @coversNothing
+ */
+class AtomEntryOnlyTest extends TestCase
+{
     public function testEntryOnly()
     {
         $feed = Horde_Feed::readFile(__DIR__ . '/fixtures/TestAtomFeedEntryOnly.xml');

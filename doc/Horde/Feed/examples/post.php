@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Example of posting a new Atom entry with Horde_Feed.
  *
@@ -46,8 +47,8 @@ $entry->save();
  * The custom feed class ensures that when you access this feed, the objects
  * returned are MyEntry objects.
  */
-class MyFeed extends Horde_Feed_Atom {
-
+class MyFeed extends Horde_Feed_Atom
+{
     protected $_entryClassName = 'MyEntry';
 
 }
@@ -56,11 +57,12 @@ class MyFeed extends Horde_Feed_Atom {
  * The custom entry class automatically knows the feed URI (optional) and
  * can automatically add extra namespaces.
  */
-class MyEntry extends Horde_Feed_Entry_Atom {
-
-    public function __construct($uri = 'http://www.example.com/myfeed/',
-                                $xml = null)
-    {
+class MyEntry extends Horde_Feed_Entry_Atom
+{
+    public function __construct(
+        $uri = 'http://www.example.com/myfeed/',
+        $xml = null
+    ) {
         parent::__construct($uri, $xml);
 
         Horde_Xml_Element::registerNamespace('myns', 'http://www.example.com/myns/');
@@ -69,9 +71,9 @@ class MyEntry extends Horde_Feed_Entry_Atom {
     public function __get($var)
     {
         switch ($var) {
-        case 'myUpdated':
-            // Translate myUpdated to myns:updated.
-            return parent::__get('myns:updated');
+            case 'myUpdated':
+                // Translate myUpdated to myns:updated.
+                return parent::__get('myns:updated');
         }
 
         return parent::__get($var);
@@ -80,9 +82,9 @@ class MyEntry extends Horde_Feed_Entry_Atom {
     public function __set($var, $value)
     {
         switch ($var) {
-        case 'myUpdated':
-            // Translate myUpdated to myns:updated.
-            return parent::__set('myns:updated', $value);
+            case 'myUpdated':
+                // Translate myUpdated to myns:updated.
+                return parent::__set('myns:updated', $value);
         }
 
         return parent::__set($var, $value);

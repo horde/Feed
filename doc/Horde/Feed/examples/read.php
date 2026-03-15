@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Example of reading feeds with Horde_Feed.
  *

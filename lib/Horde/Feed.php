@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Portions Copyright 2005-2007 Zend Technologies USA Inc. (http://www.zend.com)
- * Copyright 2007-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2007-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (BSD). If you
  * did not receive this file, see http://www.horde.org/licenses/bsd.
@@ -42,8 +43,10 @@ class Horde_Feed
             return new Horde_Feed_Atom($feed, $uri);
         } elseif ($entry = $doc->getElementsByTagName('entry')->item(0)) {
             // Return an Atom single-entry feed.
-            $feeddoc = new DOMDocument($doc->version,
-                                       $doc->actualEncoding);
+            $feeddoc = new DOMDocument(
+                $doc->version,
+                $doc->actualEncoding
+            );
             $feed = $feeddoc->appendChild($feeddoc->createElement('feed'));
             $feed->appendChild($feeddoc->importNode($entry, true));
 
@@ -82,7 +85,7 @@ class Horde_Feed
     {
         // Load the feed as a DOMDocument object.
         libxml_use_internal_errors(true);
-        $doc = new DOMDocument;
+        $doc = new DOMDocument();
         $doc->recover = true;
         $loaded = $doc->loadXML($string);
         if (!$loaded) {
@@ -105,7 +108,7 @@ class Horde_Feed
      *
      * @return Horde_Feed_Base
      */
-    public static function readUri($uri, Horde_Http_Client $httpclient = null)
+    public static function readUri($uri, ?Horde_Http_Client $httpclient = null)
     {
         if (is_null($httpclient)) {
             $httpclient = new Horde_Http_Client();
@@ -136,7 +139,7 @@ class Horde_Feed
     public static function readFile($filename)
     {
         libxml_use_internal_errors(true);
-        $doc = new DOMDocument;
+        $doc = new DOMDocument();
         $doc->recover = true;
         $contents = file_get_contents($filename);
         $loaded = $doc->loadXML($contents);
@@ -163,8 +166,12 @@ class Horde_Feed
         if ($error) {
             $msg .= ': ' . $error->message;
             if ($error->file) {
-                $msg .= sprintf(' in file %s, line %d, column %d',
-                                $error->file, $error->line, $error->column);
+                $msg .= sprintf(
+                    ' in file %s, line %d, column %d',
+                    $error->file,
+                    $error->line,
+                    $error->column
+                );
             }
         }
         throw new Horde_Feed_Exception($msg);
