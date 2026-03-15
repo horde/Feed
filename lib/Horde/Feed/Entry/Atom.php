@@ -73,7 +73,7 @@ class Horde_Feed_Entry_Atom extends Horde_Feed_Entry_Base
                     // Redirect
                 case 3:
                     $deleteUri = $response->getHeader('Location');
-                    continue;
+                    continue 2;
 
                     // Error
                 default:
