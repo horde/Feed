@@ -9,6 +9,7 @@
 namespace Horde\Feed;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Horde_Feed;
 use Horde_Feed_Base;
 
@@ -24,9 +25,7 @@ class ReadTest extends TestCase
         $this->_feedDir = __DIR__ . '/fixtures/';
     }
 
-    /**
-     * @dataProvider getValidAtomTests
-     */
+    #[DataProvider('getValidAtomTests')]
     public function testValidAtomFeeds($file)
     {
         $feed = Horde_Feed::readFile($this->_feedDir . $file);
@@ -46,9 +45,7 @@ class ReadTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider getValidRssTests
-     */
+    #[DataProvider('getValidRssTests')]
     public function testValidRssFeeds($file)
     {
         $feed = Horde_Feed::readFile($this->_feedDir . $file);

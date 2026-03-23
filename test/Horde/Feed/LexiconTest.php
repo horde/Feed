@@ -9,6 +9,7 @@
 namespace Horde\Feed;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 use DirectoryIterator;
 use Horde_Feed;
 
@@ -17,9 +18,7 @@ use Horde_Feed;
  */
 class LexiconTest extends TestCase
 {
-    /**
-     * @dataProvider getLexicon
-     */
+    #[DataProvider('getLexicon')]
     public function testParse($file)
     {
         $feed = Horde_Feed::readFile($file);

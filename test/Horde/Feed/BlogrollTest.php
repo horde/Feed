@@ -9,6 +9,7 @@
 namespace Horde\Feed;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Horde_Feed;
 
 /**
@@ -23,9 +24,7 @@ class BlogrollTest extends TestCase
         $this->_feedDir = __DIR__ . '/fixtures/';
     }
 
-    /**
-     * @dataProvider getValidBlogrollTests
-     */
+    #[DataProvider('getValidBlogrollTests')]
     public function testValidBlogrolls($file)
     {
         $feed = Horde_Feed::readFile($this->_feedDir . $file);
@@ -44,12 +43,6 @@ class BlogrollTest extends TestCase
         $this->assertEquals($entry->title, $entry['title']);
         $this->assertEquals($entry->htmlUrl, $entry['htmlUrl']);
         $this->assertEquals($entry->xmlUrl, $entry['xmlUrl']);
-    }
-
-    public function testGroupedBlogrolls()
-    {
-        $feed = Horde_Feed::readFile($this->_feedDir . 'MySubscriptionsGrouped.opml');
-        $this->markTestIncomplete();
     }
 
     public static function getValidBlogrollTests()
