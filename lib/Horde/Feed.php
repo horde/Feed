@@ -45,7 +45,7 @@ class Horde_Feed
             // Return an Atom single-entry feed.
             $feeddoc = new DOMDocument(
                 $doc->version,
-                $doc->actualEncoding
+                $doc->encoding
             );
             $feed = $feeddoc->appendChild($feeddoc->createElement('feed'));
             $feed->appendChild($feeddoc->importNode($entry, true));
